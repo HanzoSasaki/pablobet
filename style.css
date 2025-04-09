@@ -1,0 +1,61 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .container {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    margin: auto;
+    box-shadow: 0 0 15px #f90;
+  }
+  
+  /* Estilo para os reels da roleta */
+  .jackpot {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .reel {
+    font-size: 50px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    background-color: #f90;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #ffa733;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  #stats {
+    margin-top: 15px;
+  }
+  
