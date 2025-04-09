@@ -1,30 +1,42 @@
-body {
+/* Reset básico para margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: 'Arial', sans-serif;
     background: #111;
     color: #fff;
     text-align: center;
-    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 10px;
   }
   
   .container {
     background-color: #222;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
+    max-width: 90%;
     width: 320px;
-    margin: auto;
     box-shadow: 0 0 15px #f90;
   }
   
-  /* Estilo para os reels da roleta */
+  /* Área dos reels */
   .jackpot {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
   
+  /* Reels com efeito 3D e base para o spin */
   .reel {
     font-size: 50px;
-    margin: 0 10px;
+    margin: 0 5px;
     padding: 10px;
     background-color: #333;
     border-radius: 10px;
@@ -33,6 +45,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    backface-visibility: hidden; /* Melhora o efeito 3D */
+    perspective: 1000px;
+  }
+  
+  /* Classe para ativar o efeito de spin */
+  .reel.spinning {
+    animation: spinEffect 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  }
+  
+  /* Keyframes para a rotação 3D */
+  @keyframes spinEffect {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(360deg);
+    }
   }
   
   button {
@@ -44,6 +73,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 20px;
+    transition: background-color 0.3s;
   }
   
   button:hover {
@@ -57,5 +87,24 @@ body {
   
   #stats {
     margin-top: 15px;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 480px) {
+    .container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .reel {
+      width: 60px;
+      height: 60px;
+      font-size: 40px;
+    }
+  
+    button {
+      width: 100%;
+      font-size: 16px;
+    }
   }
   
