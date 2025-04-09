@@ -1,110 +1,130 @@
 /* Reset básico para margens */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.container {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 95%;
+  width: 360px;
+  box-shadow: 0 0 20px #f90;
+  transition: box-shadow 0.3s;
+}
+
+/* Área dos reels */
+.jackpot {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Reels com efeito 3D e base para o spin */
+.reel {
+  font-size: 50px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 12px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+/* Quando está girando, ativa rotação e brilho RGB */
+.reel.spinning {
+  animation: spinEffect 0.8s linear infinite, glowRGB 1s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Rotação 3D */
+@keyframes spinEffect {
+  0% {
+    transform: rotateX(0deg);
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: #111;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 10px;
+  100% {
+    transform: rotateX(360deg);
   }
-  
+}
+
+/* Efeito RGB brilhando */
+@keyframes glowRGB {
+  0% {
+    box-shadow: 0 0 15px red;
+  }
+  33% {
+    box-shadow: 0 0 15px lime;
+  }
+  66% {
+    box-shadow: 0 0 15px blue;
+  }
+  100% {
+    box-shadow: 0 0 15px red;
+  }
+}
+
+button {
+  background-color: #f90;
+  color: #000;
+  font-size: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.4);
+}
+
+button:hover {
+  background-color: #ffa733;
+  transform: scale(1.03);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 22px;
+  min-height: 40px;
+}
+
+#stats {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
   .container {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 90%;
-    width: 320px;
-    box-shadow: 0 0 15px #f90;
+    width: 100%;
+    padding: 15px;
   }
-  
-  /* Área dos reels */
-  .jackpot {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Reels com efeito 3D e base para o spin */
+
   .reel {
-    font-size: 50px;
-    margin: 0 5px;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 10px;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden; /* Melhora o efeito 3D */
-    perspective: 1000px;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
   }
-  
-  /* Classe para ativar o efeito de spin */
-  .reel.spinning {
-    animation: spinEffect 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-  }
-  
-  /* Keyframes para a rotação 3D */
-  @keyframes spinEffect {
-    0% {
-      transform: rotateX(0deg);
-    }
-    100% {
-      transform: rotateX(360deg);
-    }
-  }
-  
+
   button {
-    background-color: #f90;
-    color: #000;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 16px;
   }
-  
-  button:hover {
-    background-color: #ffa733;
-  }
-  
-  #result {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-  
-  #stats {
-    margin-top: 15px;
-  }
-  
-  /* Responsividade para telas menores */
-  @media (max-width: 480px) {
-    .container {
-      width: 95%;
-      padding: 20px;
-    }
-  
-    .reel {
-      width: 60px;
-      height: 60px;
-      font-size: 40px;
-    }
-  
-    button {
-      width: 100%;
-      font-size: 16px;
-    }
-  }
-  
+}

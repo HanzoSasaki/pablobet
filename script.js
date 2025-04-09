@@ -2,7 +2,7 @@
 const CONFIG = {
     INITIAL_BALANCE: 1000,
     BET_AMOUNT: 50,
-    SPIN_DURATION: 3000,
+    SPIN_DURATION: 1000,
     REEL_DELAY: 300,
     EMOJIS: ["🍒", "🍋", "🍊", "🍇", "🍀", "⭐", "💎"],
     PAYOUTS: {
@@ -35,9 +35,9 @@ const CONFIG = {
   
   // Efeitos sonoros (substitua por arquivos reais)
   const playSound = {
-    spin: () => new Audio('spin-sound.mp3').play(),
-    win: () => new Audio('win-sound.mp3').play(),
-    lose: () => new Audio('lose-sound.mp3').play()
+    spin: () => new Audio('song/spin.mp3').play(),
+    win: () => new Audio('song/win.mp3').play(),
+    lose: () => new Audio('song/lose.mp3').play()
   };
   
   // Inicialização do jogo
