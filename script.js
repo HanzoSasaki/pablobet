@@ -61,7 +61,7 @@ function verificarResultado() {
   } else {
     // Derrota: incrementa a contagem de perdas e exibe quantas vezes perdeu
     losses++;
-    resultDiv.textContent = `o pablo deu a bunda :${losses} vezes 😬`;
+    resultDiv.textContent = `Se fudeu : :${losses} vezes 😬`;
   }
   
   // Atualiza os stats
